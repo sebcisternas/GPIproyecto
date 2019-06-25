@@ -1,0 +1,111 @@
+
+<h2 class="pull-center">&nbsp &nbsp &nbsp<u><center>Perfil Trabajador</center> </u></h2>
+
+<br>
+<br>
+<meta charset="utf-8">
+<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+
+
+
+
+<h5>N° Perfil : <%= @informe.id %></h5>
+<h5>Fecha : <%= @informe.created_at.strftime("%d-%m-%Y = Hora: %H:%M:%S") %></h5><br>
+
+
+<p>Generado por : <%= @informe.user.nombre %> <%= @informe.user.apellidopa %> <%= @informe.user.apellidoma%></p>
+<p>Nombre Trabajador:  <%= @informe.estudiante.nombreestudiante %> <%= @informe.estudiante.apellidopa %> <%= @informe.estudiante.apellidoma%></p>
+
+
+<br>
+
+
+<table class= "table">
+<tr><td>&nbsp &nbsp &nbsp &nbsp 1.)¿Es capaz de sacar conclusiones detalladas de un texto o problema??. </td> 
+<td> <% if @informe.nota1==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp2.)¿Usted mantiene siempre buenas relaciones con sus compañeros de trabajo?</th> 
+<td> <% if @informe.nota2==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp3.)¿Se toma en serio una competencia entre amigos?</th>    
+<td> <% if @informe.nota3==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th> &nbsp &nbsp &nbsp &nbsp4.)¿Si una persona necesita información, usted estaría totalmente dispuesto a ayudarle con una explicación detallada?</th>   
+<td> <% if @informe.nota4==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th>&nbsp &nbsp &nbsp &nbsp.)¿En una situación de conflicto, estaría dispuesto a mediar para solucionarlo?</th>  
+<td> <% if @informe.nota5==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th>&nbsp &nbsp &nbsp &nbsp.)¿En una situación de conflicto, estaría dispuesto a mediar para solucionarlo?</th>  
+<td> <% if @informe.nota6==1 %>Si <%else%> No<%end%></th> </tr>
+
+</table>
+
+<table class= "table">
+<td >&nbsp &nbsp &nbsp &nbsp7.)¿En una situación de descontrol emocional de un amigo o compañero, usted intenta contenerlo?</td>
+<td> <% if @informe.nota7==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp8.)¿Le emocionan los nuevos proyectos? </th>
+<td> <% if @informe.nota8==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp9.)¿Usted gusta de las sorpresas? </th> 
+<td> <% if @informe.nota9==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th>&nbsp &nbsp &nbsp &nbsp10.)¿Sus decisiones en la mayoría de los casos van orientadas a una visión futura?  </th>
+<td> <% if @informe.nota10==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp11.)¿En una actividad grupal, considera que la opinión de todos importa? </th>
+<td> <% if @informe.nota11==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp12.)¿Le agrada cumplir con sus trabajos sin falta? </th>
+<td> <% if @informe.nota12==1 %>Si <%else%> No<%end%></th> </tr>
+
+
+</table>
+
+<table class= "table">
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp13.)¿Usted tiene conocimientos nivel usuario de computación, es bueno en matemáticas?</th>
+<td> <% if @informe.nota13==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp14.)¿Usted considera que tiene conocimientos acabados en su área de especialidad?</th>  
+<td> <% if @informe.nota14==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp15.)¿le agrada el trabajo en equipo? </th>  
+<td> <% if @informe.nota15==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp16.)¿Es bueno planificando y prediciendo situaciones? </th> 
+<td> <% if @informe.nota16==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp17.)¿Le agradan los procedimientos ordenados?</th>
+<td> <% if @informe.nota17==1 %>Si <%else%> No<%end%></th> </tr>
+<tr><th >&nbsp &nbsp &nbsp &nbsp18.)¿Le gusta hacer actividades productivas en horas libres?</th>
+<td> <% if @informe.nota18==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp19.)¿Se siente comodo aceptando gran responsabilidad por un proyecto?</th>
+<td> <% if @informe.nota19==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp20.)¿Usted siempre termina lo que empieza?</th>
+<td> <% if @informe.nota20==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp21.)¿Puede dejar un trabajo sin terminar?</th>
+<td> <% if @informe.nota21==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp22.)¿Siente inseguridad si no tiene un grupo que le apoye?</th>
+<td> <% if @informe.nota22==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp23.)¿Le gusta ser parte de un grupo?</th>
+<td> <% if @informe.nota23==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp24.)¿Le gusta tener estimulos que lo motiven a continuar?</th>
+<td> <% if @informe.nota24==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp25.)¿Considera que esta sociedad es muy individualista?</th>
+<td> <% if @informe.nota25==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp26.)¿Considera que en esta sociedad las personas trabajan en equipo?</th>
+<td> <% if @informe.nota26==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp27.)¿Considera que existe en esta sociedad competencia por puestos de trabajo?</th>
+<td> <% if @informe.nota27==1 %>Si <%else%> No<%end%></th> </tr>
+
+<tr><th >&nbsp &nbsp &nbsp &nbsp28.)¿Considera que encontrar trabajo en esta sociedad es sencillo?</th>
+<td> <% if @informe.nota28==1 %>Si <%else%> No<%end%></th> </tr>
+
+
+
+</table>
+
+
+

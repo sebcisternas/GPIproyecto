@@ -1,0 +1,199 @@
+
+
+<%flash.each do |name , msg| %>
+  <div class="alert alert-<%= name %>">
+    <%= msg %>
+  </div>
+<% end %>
+
+
+
+<center><h1 class= text-info ><u> Perfil </u></h1><br></center>
+
+
+<%=form_for( @informes) do |f| %>
+  <label class="text-dark"><u>Emitido por :</u> <%=current_user.nombre%> <%=current_user.apellidopa%> <%=current_user.apellidoma%></label>
+  <br><br><label class="text-dark"><u>Trabajador</u></label>
+
+  <%= f.collection_select :estudiante_id, Estudiante.all, :id,:fullname, {:include_blank => "Seleccionar Trabajador"},{class: "btn btn-outline-info btn-sm"}  %>
+ <br><br>
+ 
+ 
+<table class="table">
+<thead class ="thead-info">
+<tr>
+<th scope="col">Preguntas</th>
+<th scope="col">Respuestas</th>
+</tr>
+    
+<tbody>
+ <tr>
+
+     <td>  <label class="text-dark text-justify"><li>1.)¿Es capaz de sacar conclusiones detalladas de un texto o problema?</li></label></td>
+      <td>  <%= f.collection_radio_buttons:nota1,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>     
+ 
+ <tr>
+ <td>  <label class="text-dark text-justify"><li> 2.)¿Usted mantiene siempre buenas relaciones con sus compañeros de trabajo?</li></label></td>
+  <td>  <%= f.collection_radio_buttons:nota2,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+  </tr>
+  <tr>
+ <td>  <label class="text-dark text-justify"><li> 3.)¿Se toma en serio una competencia entre amigos?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota3,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+ <tr>
+ <td>  <label class="text-dark text-justify"><li> 4.)¿Si una persona necesita información, usted estaría totalmente dispuesto a ayudarle con una explicación detallada?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota4,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+ 
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>5.)¿En una situación de conflicto, estaría dispuesto a mediar para solucionarlo?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota5,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>6.)¿Usted realiza sus actividades de forma ordenada y a la misma hora?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota6,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>7.)¿En una situación de descontrol emocional de un amigo o compañero, usted intenta contenerlo?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota7,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>8.)¿Le emocionan los nuevos proyectos?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota8,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>9.)¿Usted gusta de las sorperesas?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota9,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+
+
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>10.)¿Sus decisiones en la mayoría de los casos van orientadas a una visión futura?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota10,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>11.)¿En una actividad grupal, considera que la opinión de todos importa?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota11,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>12.)¿Le agrada cumplir con sus trabajos sin falta?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota12,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>13.)¿Usted tiene conocimientos nivel usuario de computación, es bueno en matemáticas?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota13,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>14.)¿Usted considera que tiene conocimientos acabados en su área de especialidad?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota14,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>15.)¿le agrada el trabajo en equipo? </li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota15,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>16.)¿Es bueno planificando y prediciendo situaciones? </li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota16,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>17.)¿Le agradan los procedimientos ordenados?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota17,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>18.)¿Le gusta hacer actividades productivas en horas libres?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota18,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>19.)¿Se siente comodo aceptando gran responsabilidad por un proyecto?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota19,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>20.)¿Usted siempre termina lo que empieza?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota20,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>21.)¿Puede dejar un trabajo sin terminar?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota21,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>22.)¿Siente inseguridad si no tiene un grupo que le apoye?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota22,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>23.)¿Le gusta ser parte de un grupo?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota23,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>24.)¿Le gusta tener estimulos que lo motiven a continuar?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota24,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>25.)¿Considera que esta sociedad es muy individualista?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota25,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>26.)¿Considera que en esta sociedad las personas trabajan en equipo?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota26,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>27.)¿Considera que existe en esta sociedad competencia por puestos de trabajo?</label></td>
+ <td>  <%= f.collection_radio_buttons:nota27,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+ <tr>
+ <td>  <label class="text-dark text-justify"><li>28.)¿Considera que encontrar trabajo en esta sociedad es sencillo?</li></label></td>
+ <td>  <%= f.collection_radio_buttons:nota28,[[1,'Si.....'],[0,'No']],:first,:last,{},{:class => "create-proyect"} %> </td>
+ </tr>
+
+
+
+
+
+
+
+
+
+  </tr>   
+
+
+
+
+
+
+  </table>
+  
+      <%= f.submit "Guardar" ,class:"btn btn-info" %>
+     
+<%end%>
+
+
+
+
+  
+
